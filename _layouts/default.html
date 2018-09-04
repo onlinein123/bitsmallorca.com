@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ site.title }}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{{ page.texts.misc.description }}">
+        <meta name="author" content="{{ site.author.name }} - {{ site.author.url }}">
+        {% include vars.html %}
+        {% asset img/favicon.ico %}
+        <link rel="canonical" href="{{ site_url }}{{ page.url | replace: 'index.html', '' }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Work+Sans"> 
+        {% asset main.scss %}
+    </head>
+    <body>        
+        <header>
+            <div id="header_bg">
+                {% asset img/header.jpg alt="" %}
+            </div>
+            <div id="header_overlay"></div>
+            <div id="header_content">
+                <div id="header_content_top">
+                    <div id="header_content_top_logo">
+                        <a href="/">{% asset img/logo.png alt="logo" %}</a>
+                    </div>
+                    <div id="header_content_top_spacer">&nbsp;</div>
+                    <div id="header_content_top_flags">
+                        <div id="header_content_top_flags_toggler" title="{{ page.texts.misc.change_lang }}">
+                            {% capture toggler_flag %}img/flags/{{ page.lang }}.png{% endcapture %}
+                            <img src="{{ assets[toggler_flag].digest_path }}" alt="langs">
+                        </div>
+                        <div id="header_content_top_flags_outer">
+                            <div id="header_content_top_flags_inner">
+                                <a href="/en" title="English"   >{% asset img/flags/en.png alt="en" %}</a>
+                                <a href="/es" title="Español"   >{% asset img/flags/es.png alt="es" %}</a>
+                                <a href="/it" title="Italiano"  >{% asset img/flags/it.png alt="it" %}</a>
+                                <a href="/de" title="Deutsch"   >{% asset img/flags/de.png alt="de" %}</a>
+                                <a href="/nl" title="Nederlands">{% asset img/flags/nl.png alt="nl" %}</a>
+                                <a href="/fr" title="Français"  >{% asset img/flags/fr.png alt="fr" %}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1>Balearic Islands Touristic Services</h1>
+                <h2>{{ page.texts.header.welcome }}</h2>
+                <div id="header_content_menu">
+                    <a href="#about"    >{{ page.texts.menu.about }}</a>
+                    <a href="#services" >{{ page.texts.menu.services }}</a>
+                    <a href="#contacts" >{{ page.texts.menu.contacts }}</a>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+           <section id="about">
+                <div id="about_text">
+                    <h2>{{ page.texts.titles.about }}</h2>
+                    <div>{{ page.texts.content.about | markdownify }}</div>
+                </div>
+                <div id="about_gallery_wrapper">
+                    <div id="about_gallery">
+                        <div id="about_gallery_slick">
+                            <!--
+                            <div><img class="lazy" data-src="{% asset img/gallery/1.jpg @path %}" alt="1"></div>
+                            <div><img class="lazy" data-src="{% asset img/gallery/2.jpg @path %}" alt="2"></div>
+                            <div><img class="lazy" data-src="{% asset img/gallery/3.jpg @path %}" alt="3"></div>
+                            <div><img class="lazy" data-src="{% asset img/gallery/4.jpg @path %}" alt="4"></div>
+                            <div><img class="lazy" data-src="{% asset img/gallery/5.jpg @path %}" alt="5"></div>
+                            <div><img class="lazy" data-src="{% asset img/gallery/6.jpg @path %}" alt="6"></div>
+                            <div><img class="lazy" data-src="{% asset img/gallery/7.jpg @path %}" alt="7"></div>
+                            <div><img class="lazy" data-src="{% asset img/gallery/8.jpg @path %}" alt="8"></div>
+                            -->
+                            <div>{% asset img/gallery/1.jpg alt="1" %}</div>
+                            <div>{% asset img/gallery/2.jpg alt="2" %}</div>
+                            <div>{% asset img/gallery/3.jpg alt="3" %}</div>
+                            <div>{% asset img/gallery/4.jpg alt="4" %}</div>
+                            <div>{% asset img/gallery/5.jpg alt="5" %}</div>
+                            <div>{% asset img/gallery/6.jpg alt="6" %}</div>
+                            <div>{% asset img/gallery/7.jpg alt="7" %}</div>
+                            <div>{% asset img/gallery/8.jpg alt="8" %}</div>
+                        </div>
+                    </div>
+                    <div id="about_gallery_prev" class="slick_custom_prev"><i class="fa fa-angle-left"></i></div>
+                    <div id="about_gallery_next" class="slick_custom_next"><i class="fa fa-angle-right"></i></div>
+                    <div id="about_gallery_dots_container" class="slick_custom_dots"></div>
+                </div>
+            </section>
+            
+            
+            <section id="services">
+                <h2>{{ page.texts.titles.services }}</h2>
+                <div id="services_wrapper">
+                    <div class="services_box">
+                        <h3>{{ page.texts.titles.transfers }}</h3>
+                        <div>{{ page.texts.content.transfers | markdownify }}</div>
+                    </div>
+                    <div class="services_box">
+                        <h3>{{ page.texts.titles.excursions }}</h3>
+                        <div>{{ page.texts.content.excursions | markdownify }}</div>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <div id="contacts">
+               <h2>{{ page.texts.titles.contacts }}</h2>
+               <div id="contacts_info">
+                    <p>
+                        <b>B.I.T.S. SL</b>
+                        <br>Balearic Islands Touristic Services SL
+                    </p>
+                    <p>Tel/Fax +34 971 716 439</p>
+                    <p>
+                        Carrer Vinyassa 12D
+                        <br>07005 Palma de Mallorca
+                        <br>Islas Baleares - España
+                    </p>
+                    <p>ES-B57419640</p>
+                </div>
+                <div id="contacts_team">
+                    <div class="contacts_team_row">
+                        <div>
+                            <h3>GENERAL CORPORATE MAIL</h3>
+                            <p>bitsm1@bitsmallorca.com</p>
+                        </div>
+                        <div>
+                            <h3>VIP & YACHT DIVISION</h3>
+                            <p>yachts@bitsmallorca.com</p>
+                        </div>
+                        <div>
+                            <h3>ADMINISTRATION/JOBS</h3>
+                            <p>office@bitsmallorca.com</p>
+                        </div>
+                    </div>
+                    <div class="contacts_team_row">
+                        <div>
+                            <h3>ALEX FRAILE</h3>
+                            <p>+34 609 807 964</p>
+                            <p>alex@bitsmallorca.com</p>
+                        </div>
+                        <div>
+                            <h3>CHRISTOPHE DE JONGHE</h3>
+                            <p>+34 619 711 673</p>
+                            <p>chris@bitsmallorca.com</p>
+                        </div>
+                        <div>
+                            <h3>JOAN VIVES</h3>
+                            <p>+34 606 326 830</p>
+                            <p>joan@bitsmallorca.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="backtotop" title="{{ page.texts.misc.back_to_top }}"><i class="fa fa-chevron-up"></i></div>
+            <div id="cookie_info"><i class="fas fa-lock"></i>{{ page.texts.misc.cookie_info }}</div>
+        </main>
+        
+        
+        <footer>
+            <div id="footer_credits">Website by <b><a href="{{ site.author.url }}" target="_blank">{{ site.author.name }}</a></b></div>
+            <div id="footer_copyright">© {{'now' | date: "%Y"}} B.I.T.S. S.L</div>
+        </footer>
+        
+        {% asset main.js %}
+    </body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "name": "bitsmallorca.com",
+    "version": "0.1.0",
+    "private": true,
+    "description": "",
+    "author": "Online In 123 <info@onlinein123.com> (https://onlinein123.com)",
+    "license": "UNLICENSED",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gasparesganga/b.git"
+    },
+    "dependencies": {
+        "jquery": "^3.3.1",
+        "jquery-lazy": "^1.7.9",
+        "slick-carousel": "^1.8.1"
+    }
+}

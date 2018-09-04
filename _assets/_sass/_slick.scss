@@ -1,0 +1,41 @@
+.slick-dots {
+    bottom  : 0;
+    & li button:before {
+        font-family : $font_stack;
+        font-size   : 2rem;
+        color       : $color_yellow;
+    }
+    & li button:hover:before,
+    & li button:focus:before,
+    & li.slick-active button:before {
+        color   : $color_yellow;
+    }
+}
+
+%slick_custom_button {
+    position    : absolute;
+    top         : 35%;
+    font-size   : 3rem;
+    padding     : 0.2rem;
+    cursor      : pointer;
+    color       : $color_yellow;
+    opacity     : 0.7;
+    transition  : all 0.4s;
+    &:hover {
+        opacity     : 1;
+    }
+}
+.slick_custom_prev {
+    @extend %slick_custom_button;
+    left    : 0;
+}
+.slick_custom_next {
+    @extend %slick_custom_button;
+    right   : 0;
+}
+
+.slick_custom_dots {
+    .slick-dots {
+        position    : static;
+    }
+}
